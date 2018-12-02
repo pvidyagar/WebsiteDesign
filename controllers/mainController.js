@@ -7,7 +7,7 @@ angular
 						'$http',
 						'$rootScope',
 						function($scope, $http,$rootScope) {
-							$scope.title='Fibologic Technologies';
+							$scope.title='Fibologic Technology';
 							$scope.filters=[{'id':'*','name':'ALL','class':'active'},
 											{'id':'.diff','name':'Different','class':''},
 											{'id':'.animal','name':'Animal','class':''},
