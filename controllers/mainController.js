@@ -21,6 +21,74 @@ angular
 											{'id':'.3unit','name':'3 Units','class':''},
 											{'id':'.1unit','name':'1 Unit','class':''}
 											];
+							$scope.shoppingCartDetails = {
+								'subTotal' : 0.0,
+								'shippingAndHandlingFees':0.0,
+								'discount':0.0,
+								'subTotalAftrDiscount' : 0.0,
+								'cgst': 0.0 ,
+								'sgst': 0.0,
+								'totalPayableAmount': 0.0,
+								'totalSaving':0.0
+							};
+							$scope.shoppingCartProducts =[
+								{
+									'name':'FIBOLOGIC DESIGNER SWITCH BOARD',
+									'subName':'',
+									'unitPrice': 2599,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC 4 TOUCH LIGHT SWITCH',
+									'subName':'',
+									'unitPrice': 2399,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC 4 STEP TOUCH FAN SWITCH',
+									'subName':'',
+									'unitPrice': 2299,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC SMART USB SWITCH',
+									'subName':'',
+									'unitPrice': 399,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC HIGH POWER TOUCH SWITCH',
+									'subName':'',
+									'unitPrice': 1799,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC SMART TOUCH DOORBELL',
+									'subName':'',
+									'unitPrice': 2199,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC 3 PIN POWER SOCKET BIG',
+									'subName':'',
+									'unitPrice': 299,
+									'quantity':0,
+									'total': 0 
+								},
+								{
+									'name':'FIBOLOGIC 3 PIN POWER SOCKET SMALL',
+									'subName':'',
+									'unitPrice': 249,
+									'quantity':0,
+									'total': 0 
+								}
+							];
 							$scope.products=[
 							{'class':'col-xs-4 col-sm-4 col-md-4 isotope-item animal blackwhite',
 								'img':"images/portfolio/animal-bw-elephant.jpg",
@@ -148,49 +216,41 @@ angular
 								'desc':''
 								}		];
 
+							$scope.updateQuantityAndTotal = function (){
+								let subTotal = 0;
+								angular.forEach(this.shoppingCartProducts, function (value, key) {
+									value.total = value.unitPrice * value.quantity;
+									subTotal = subTotal + value.total; 
+								});
+								if(this.shoppingCartDetails.discount > 0 ) {
+									if(this.shoppingCartDetails.discount > 60 ) {
+										this.shoppingCartDetails.discount = 60;
+									}
+									this.shoppingCartDetails.subTotalAftrDiscount = (subTotal*((100-this.shoppingCartDetails.discount)/100));
+								} else {
+									this.shoppingCartDetails.subTotalAftrDiscount = subTotal;
+								}
+								this.shoppingCartDetails.subTotal = subTotal;
+								if(subTotal > 0 ){
+									this.shoppingCartDetails.shippingAndHandlingFees = 1000;
+								} else {
+									this.shoppingCartDetails.shippingAndHandlingFees = 0;
+								}
+								this.shoppingCartDetails.cgst = this.shoppingCartDetails.subTotalAftrDiscount * 0.09;
+								this.shoppingCartDetails.sgst = this.shoppingCartDetails.subTotalAftrDiscount * 0.09;
+								this.shoppingCartDetails.totalPayableAmount = this.shoppingCartDetails.subTotalAftrDiscount
+									+ this.shoppingCartDetails.shippingAndHandlingFees + this.shoppingCartDetails.cgst + this.shoppingCartDetails.sgst;
+								
+								this.shoppingCartDetails.totalSaving = this.shoppingCartDetails.subTotal - this.shoppingCartDetails.subTotalAftrDiscount;
+
+								this.shoppingCartDetails.totalPayableAmount = this.shoppingCartDetails.totalPayableAmount.toFixed(2);
+								this.shoppingCartDetails.subTotalAftrDiscount = this.shoppingCartDetails.subTotalAftrDiscount.toFixed(2);
+								this.shoppingCartDetails.cgst = this.shoppingCartDetails.cgst.toFixed(2);
+								this.shoppingCartDetails.sgst = this.shoppingCartDetails.sgst.toFixed(2);
+								this.shoppingCartDetails.totalSaving = this.shoppingCartDetails.totalSaving.toFixed(2);
+							}
 						}
 
-				]);
-
-		// <li class="active"><a href="#" data-filter="*">All</a></li>
-		// 					<li><a href="#" data-filter=".diff">Different</a></li>
-		// 					<li><a href="#" data-filter=".animal">Animal</a></li>
-		// 					<li><a href="#" data-filter=".music">Music</a></li>
-		// 					<li><a href="#" data-filter=".places">Places</a></li>
-		// 					<li><a href="#" data-filter=".blackwhite">Black & White</a></li>
-		// 					<li><a href="#" data-filter=".flower">Flowers</a></li>
-
-
-
-// <div
-// 						class="isotope-container row grid-space-10 centered text-center" 
-// 						ng-repeat="product in products track by $index">
-					
-// <div
-// 						class="isotope-container row grid-space-10 centered text-center" 
-// 						ng-repeat="product in products track by $index">
-						
-// 						<div class ='col-xs-4 col-sm-4 col-md-4 isotope-item ' class={{product.class}}>
-// 							<div class="image-box shadow bordered  text-center  mb-10">
-// 								<div class="overlay-container">
-// 									<img src={{product.img}} alt="">
-// 									<div class="overlay-top">
-// 										<div class="text">
-// 											<h3>
-// 												<a href="portfolio-item.html">{{product.title}}</a>
-// 											</h3>
-// 											<p class="small">{{product.desc}}</p>
-// 										</div>
-// 									</div>
-// 									<div class="overlay-bottom">
-// 										<div class="links">
-// 											<a href="portfolio-item.html"
-// 												class="btn btn-gray-transparent btn-animated btn-sm">View
-// 												Details <i class="pl-10 fa fa-arrow-right"></i>
-// 											</a>
-// 										</div>
-// 									</div>
-// 								</div>
-// 							</div>
-// 						</div>
+				]
+				);
 
