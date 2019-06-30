@@ -102,7 +102,7 @@
                         <td class="price"> {{product.unitPrice}} </td>
                         <td class="quantity">
                           <div class="form-group">
-                            <input type="text" class="form-control" ng-change="updateQuantityAndTotal()" ng-model="product.quantity">
+                            <input type="text" class="form-control" ng-blur="updateQuantityAndTotal(product.quantity, $index)"  ng-change="updateQuantityAndTotal(product.quantity, $index)" ng-model="product.quantity" only-digits>
                           </div>
                         </td>
                         <td class="amount">{{product.total}} </td>
@@ -116,8 +116,7 @@
                     <td colspan="2" align="right"><b>Discount (%)</b></td>
                     <td colspan="2" align="right" class="quantity">
                         <div class="form-group">
-                          <input type="text" 
-                          inputmode="numeric" pattern="[0-9]*" digitOnly class="form-control" ng-change="updateQuantityAndTotal()" ng-model="shoppingCartDetails.discount">
+                          <input type="text" class="form-control" ng-change="updateDiscountAndTotal(shoppingCartDetails.discount)" ng-model="shoppingCartDetails.discount" digitOnly>
                         </div>
                       </td>
                   </tr>

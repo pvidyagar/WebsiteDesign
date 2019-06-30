@@ -1,5 +1,30 @@
 angular
 		.module("fiboApp", [])
+		.directive('onlyDigits', function () {
+			return {
+			  require: 'ngModel',
+			  restrict: 'A',
+			  link: function (scope, element, attr, ctrl) {
+				function inputValue(val) {
+				  if (val) {
+					var digits = val.replace(/[^0-9.]/g, '');
+		
+					if (digits.split('.').length > 2) {
+					  digits = digits.substring(0, digits.length - 1);
+					}
+		
+					if (digits !== val) {
+					  ctrl.$setViewValue(digits);
+					  ctrl.$render();
+					}
+					return parseFloat(digits);
+				  }
+				  return undefined;
+				}            
+				ctrl.$parsers.push(inputValue);
+			  }
+			};
+		 })
 		.controller(
 				'mainController',
 				[
@@ -216,9 +241,22 @@ angular
 								'desc':''
 								}		];
 
-							$scope.updateQuantityAndTotal = function (){
+							$scope.check = function() {
+								console.log('Chec method ccalled');
+							}
+							$scope.updateDiscountAndTotal = function (quantity){
+								if(quantity === undefined) {
+									this.shoppingCartDetails.discount = 0;
+								}
+								if(!parseFloat(quantity)) {
+									this.shoppingCartDetails.discount = 0;
+								}
+
 								let subTotal = 0;
 								angular.forEach(this.shoppingCartProducts, function (value, key) {
+									if(!parseInt(value.quantity)){
+										value.quantity = 0;
+									}
 									value.total = value.unitPrice * value.quantity;
 									subTotal = subTotal + value.total; 
 								});
@@ -248,6 +286,15 @@ angular
 								this.shoppingCartDetails.cgst = this.shoppingCartDetails.cgst.toFixed(2);
 								this.shoppingCartDetails.sgst = this.shoppingCartDetails.sgst.toFixed(2);
 								this.shoppingCartDetails.totalSaving = this.shoppingCartDetails.totalSaving.toFixed(2);
+							}
+							$scope.updateQuantityAndTotal = function (quantity, index){
+								if(quantity === undefined) {
+									this.shoppingCartProducts[index].quantity = 0;
+								}
+								if(!parseFloat(quantity)) {
+									this.shoppingCartProducts[index].quantity = 0;
+								}
+								this.updateDiscountAndTotal(this.shoppingCartDetails.discount);
 							}
 						}
 
