@@ -34,13 +34,16 @@ angular
 						function($scope, $http,$rootScope) {
 							$scope.title='Fibologic Technology';
 							$scope.filters=[{'id':'*','name':'ALL','class':'active'},
-											{'id':'.diff','name':'Different','class':''},
-											{'id':'.animal','name':'Animal','class':''},
-											{'id':'.music','name':'Music','class':''},
-											{'id':'.places','name':'Places','class':''},
-											{'id':'.blackwhite','name':'Black & White','class':''},
-											{'id':'.flower','name':'Flowers','class':''}
-											];
+							{'id':'*','name':'Switch','class':''},
+							{'id':'*','name':'Calling Bell','class':''},];
+							// $scope.filters=[{'id':'*','name':'ALL','class':'active'},
+							// 				{'id':'.diff','name':'Different','class':''},
+							// 				{'id':'.animal','name':'Animal','class':''},
+							// 				{'id':'.music','name':'Music','class':''},
+							// 				{'id':'.places','name':'Places','class':''},
+							// 				{'id':'.blackwhite','name':'Black & White','class':''},
+							// 				{'id':'.flower','name':'Flowers','class':''}
+							// 				];
 							$scope.mainfilters=[{'id':'.4unit','name':'4 Units','class':'active'},
 											{'id':'.6unit','name':'6 Units','class':''},
 											{'id':'.3unit','name':'3 Units','class':''},
