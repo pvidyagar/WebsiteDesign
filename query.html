@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zxx">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Fibologic Technology Pvt. Ltd.</title>
+    <meta name="description" content="Fibologic Technology Pvt Ltd">
+    <meta name="author" content="Fibologic">
+
+    <!-- Mobile Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+    <!-- Plugins -->
+    <link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
+    <link href="plugins/slick/slick.css" rel="stylesheet">
+    
+    <!-- the project core CSS file -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
+    <link href="css/skins/light_blue.css" rel="stylesheet">
+
+    <!-- Custom css -->
+    <link href="css/custom.css" rel="stylesheet"> 
+    
+  </head>
+
+  <!-- body classes:  -->
+  <!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+  <!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+  <!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+  <!-- "gradient-background-header": applies gradient background to header -->
+  <!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+  <body class="" ng-app="fiboApp" ng-controller="mainController">
+
+    <!-- scrollToTop -->
+    <!-- ================ -->
+    <div class="scrollToTop circle"><i class="fa fa-angle-up"></i></div>
+
+    <!-- page wrapper start -->
+    <!-- ================ -->
+    <div class="page-wrapper">
+      <!-- breadcrumb start -->
+      <!-- ================ -->
+      <div class="breadcrumb-container">
+        <div class="container">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home pr-2"></i><a class="link-dark" href="home.html">Home</a></li>
+            <li class="breadcrumb-item active">Shopping Cart</li>
+          </ol>
+        </div>
+      </div>
+      <!-- breadcrumb end -->
+
+      <!-- main-container start -->
+      <!-- ================ -->
+      <section class="main-container">
+
+        <div class="container">
+          <div class="row">
+
+            <!-- main start -->
+            <!-- ================ -->
+            <div class="main col-12">
+
+              <!-- page-title start -->
+              <!-- ================ -->
+              <h1 class="page-title">Customer Query</h1>
+              <div class="separator-2"></div>
+              <!-- page-title end -->
+              <div> {{AllContactQuery}} </div>
+              <table class="table cart table-hover table-colored">
+                <thead>
+                  <tr>
+                    <th>Name </th>
+                    <th>Email Id </th>
+                    <th>Mobile</th>
+                    <th>Message </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="remove-data" ng-repeat="contactQuery in AllContactQuery track by $index">
+                        <td class="product">{{contactQuery.name}}</td>
+                        <td class="price"> {{contactQuery.emailId}} </td>
+                        <td class="price"> {{contactQuery.mobile}} </td>
+                        <td class="price"> {{contactQuery.message}} </td>
+                  </tr>                  
+                </tbody>
+              </table>
+              <div class="text-right">
+                <a class="btn btn-group btn-default">Submit</a>
+              </div>
+
+            </div>
+            <!-- main end -->
+
+          </div>
+        </div>
+      </section>
+      <!-- main-container end -->
+      <footer id="contact" class="clearfix ">
+
+          <!-- .footer start -->
+          <!-- ================ -->
+          <div class="footer">
+            <div class="container">
+              <div class="footer-inner">
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="footer-content">
+                      <div id="logo" class="logo-font-modified-very-small"
+                        align="left">Fibologic Technology Pvt. Ltd.</div>
+                      <div class="separator"></div>
+                      <!-- <div class="logo-footer"><img id="logo-footer" src="images/logo_light_blue.png" alt=""></div> -->
+                      <p>
+                        FiboLogic is dedicated to help its customers live
+                        intelligently by providing simple technology for a smarter
+                        life.
+                        <!-- <a
+                            href="page-about.html">Learn More<i
+                            class="fa fa-long-arrow-right pl-5"></i></a> -->
+                      </p>
+                      <div class="separator-2"></div>
+                      <!-- <nav>
+                        <ul class="nav nav-pills nav-stacked">
+                          <li><a target="_blank" href="#">Support</a></li>
+                          <li><a href="#">Privacy</a></li>
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">About</a></li>
+                        </ul>
+                      </nav> -->
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="footer-content">
+                      <h2 class="title">Contact Us</h2>
+                      <div class="alert alert-success hidden" id="MessageSent2">
+                        We have received your message, we will contact you very soon.</div>
+                      <div class="alert alert-danger hidden" id="MessageNotSent2">
+                        Oops! Something went wrong please refresh the page and try
+                        again.</div>
+                      <form role="form" id="footer-form" class="margin-clear">
+                        <div class="form-group has-feedback mb-10">
+                          <label class="sr-only" for="name2">Name</label> <input
+                            type="text" class="form-control" id="name2"
+                            placeholder="Name" name="name2"> <i
+                            class="fa fa-user form-control-feedback"></i>
+                        </div>
+                        <div class="form-group has-feedback mb-10">
+                          <label class="sr-only" for="email2">Email address</label> <input
+                            type="email" class="form-control" id="email2"
+                            placeholder="Enter email" name="email2"> <i
+                            class="fa fa-envelope form-control-feedback"></i>
+                        </div>
+                        <div class="form-group has-feedback mb-10">
+                          <label class="sr-only" for="message2">Message</label>
+                          <textarea class="form-control" rows="4" id="message2"
+                            placeholder="Message" name="message2"></textarea>
+                          <i class="fa fa-pencil form-control-feedback"></i>
+                        </div>
+                        <input type="submit" value="Ok "
+                          class="margin-clear submit-button btn btn-default">
+                      </form>
+                    </div>
+                  </div>
+                  <!-- <div class="col-md-3">
+                        <div class="footer-content">
+                          <h2 class="title">Portfolio Gallery</h2>
+                          <div class="separator-2"></div>
+                          <div class="row grid-space-10">
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-1.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-2.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-3.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-4.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-5.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                            <div class="col-xs-4 col-md-6">
+                              <div class="overlay-container mb-10">
+                                <img src="images/gallery-6.jpg" alt="">
+                                <a href="portfolio-item.html" class="overlay-link small">
+                                  <i class="fa fa-link"></i>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="text-right space-top">
+                            <a href="portfolio-grid-2-3-col.html" class="link-dark"><i class="fa fa-plus-circle pl-5 pr-5"></i>More</a>	
+                          </div>
+                        </div>
+                      </div> -->
+                  <div class="col-md-3">
+                    <div class="footer-content">
+                      <h2 class="title">Connect Us @</h2>
+                      <div class="separator-2"></div>
+                      <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium odio voluptatem necessitatibus illo vel dolorum soluta.</p> -->
+                      <ul class="social-links circle animated-effect-1">
+                        <li class="facebook"><a target="_blank"
+                          href="http://www.facebook.com/fibologic/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="twitter"><a target="_blank"
+                          href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                        <li class="googleplus"><a target="_blank"
+                          href="http://plus.google.com"><i class="fa fa-google-plus"></i></a></li>
+                      </ul>
+                      <div class="separator-2"></div>
+                      <ul class="list-icons">
+                        <li><i class="fa fa-map-marker pr-10 text-default"></i>
+                          Manjiri Greens, Phase II, Hadpsar, Pune, Maharashtra - 411028</li>
+                        <li><i class="fa fa-phone pr-10 text-default"></i> +91 87 70 186261</li>
+                        <li><i class="fa fa-phone pr-10 text-default"></i> +91 95 79 629971</li>
+                        <li><a href="mailto:info@fibologic.com"><i
+                            class="fa fa-envelope-o pr-10"></i>info@fibologic.com</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .footer end -->
+      
+          <!-- .subfooter start -->
+          <!-- ================ -->
+          <div class="subfooter">
+            <div class="container">
+              <div class="subfooter-inner">
+                <div class="row">
+                  <div class="col-md-12">
+                    <p class="text-center">Copyright @ 2015 Fibologic Tecnology Pvt. Ltd.
+                      All Rights Reserved</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- .subfooter end -->
+      
+        </footer>
+        <!-- footer end -->
+      
+        </div>
+        <!-- page-wrapper end -->
+      
+        <!-- JavaScript files placed at the end of the document so the pages load faster -->
+        <!-- ================================================== -->
+        <!-- Jquery and Bootstap core js files -->
+        <script type="text/javascript" src="plugins/jquery.min.js"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+      
+        <!-- Modernizr javascript -->
+        <script type="text/javascript" src="plugins/modernizr.js"></script>
+      
+        <!-- jQuery Revolution Slider  -->
+        <script type="text/javascript"
+          src="plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript"
+          src="plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+      
+        <!-- Isotope javascript -->
+        <script type="text/javascript"
+          src="plugins/isotope/isotope.pkgd.min.js"></script>
+      
+        <!-- Magnific Popup javascript -->
+        <script type="text/javascript"
+          src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+      
+        <!-- Appear javascript -->
+        <script type="text/javascript"
+          src="plugins/waypoints/jquery.waypoints.min.js"></script>
+      
+        <!-- Count To javascript -->
+        <script type="text/javascript" src="plugins/jquery.countTo.js"></script>
+      
+        <!-- Parallax javascript -->
+        <script src="plugins/jquery.parallax-1.1.3.js"></script>
+      
+        <!-- Contact form -->
+        <script src="plugins/jquery.validate.js"></script>
+      
+        <!-- Background Video -->
+        <script src="plugins/vide/jquery.vide.js"></script>
+      
+        <!-- Owl carousel javascript -->
+        <script type="text/javascript"
+          src="plugins/owl-carousel/owl.carousel.js"></script>
+      
+        <!-- SmoothScroll javascript -->
+        <script type="text/javascript" src="plugins/jquery.browser.js"></script>
+        <script type="text/javascript" src="plugins/SmoothScroll.js"></script>
+      
+        <!-- Initialization of Plugins -->
+        <script type="text/javascript" src="js/template.js"></script>
+      
+        <!-- Custom Scripts -->
+        <script type="text/javascript" src="js/custom.js"></script>
+        <script type="text/javascript" src="angular/angular.js"></script>
+        <script type="text/javascript" src="controllers/mainController.js"></script>
+      
+     
+
+  </body>
+</html>

@@ -1215,6 +1215,10 @@
 						required: "We need your email address to contact you",
 						email: "Please enter a valid email address e.g. name@domain.com"
 					},
+					mobile2: {
+						required: "We need your Mobile Number to contact you",
+						email: "Please enter a valid mobile number"
+					},
 					message2: {
 						required: "Please enter a message",
 						minlength: "Your message must be longer than 10 characters"
@@ -1367,7 +1371,7 @@
 					},
 					email: {
 						required: "We need your email address to contact you",
-						email: "Please enter a valid email address e.g. name@domain.com"
+						email: " e.g. name@domain.com"
 					}					
 				},
 				errorElement: "span",
