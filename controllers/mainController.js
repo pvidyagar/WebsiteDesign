@@ -34,8 +34,8 @@ angular
 						function($scope, $http,$rootScope) {
 							$scope.title='Fibologic Technology';
 							$scope.filters=[{'id':'*','name':'ALL','class':'active'},
-							{'id':'*','name':'Switch','class':''},
-							{'id':'*','name':'Calling Bell','class':''},];
+							{'id':'.Switch','name':'Switch','class':''},
+							{'id':'.Bell','name':'Calling Bell','class':''},];
 							// $scope.filters=[{'id':'*','name':'ALL','class':'active'},
 							// 				{'id':'.diff','name':'Different','class':''},
 							// 				{'id':'.animal','name':'Animal','class':''},
