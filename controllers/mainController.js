@@ -31,8 +31,9 @@ angular
 						'$scope',
 						'$http',
 						'$rootScope',
-						function($scope, $http,$rootScope) {
+						function($scope, $http, $rootScope) {
 							$scope.title='Fibologic Technology';
+							$scope.backendConnectivity = '';
 							$scope.filters=[{'id':'*','name':'ALL','class':'active'},
 							{'id':'.Switch','name':'Switch','class':''},
 							{'id':'.Bell','name':'Calling Bell','class':''},];
@@ -55,6 +56,48 @@ angular
 								'emailId' : '',
 								'mobile' : '',
 								'message' : ''
+							};
+
+							$scope.saveVisitor = function() {
+								console.log("$scope.ContactQuery");
+								console.log($scope.ContactQuery);
+								$scope.displayEmailSuccessful = true;
+								$scope.postVisitor();
+								$scope.resetContactQuery();
+							}
+							$scope.postVisitor = function() {
+								//Call the services
+								var data = $.param({
+									name: $scope.ContactQuery.name,
+									emailId: $scope.ContactQuery.emailId,
+									mobile: $scope.ContactQuery.mobile,
+									message: $scope.ContactQuery.message
+								});
+								var config = {
+									headers : {
+										'Access-Control-Allow-Credentials': true,
+										'Access-Control-Allow-Origin': '*',
+										'Access-Control-Allow-Headers' : 'Origin,X-Requested-With,Content-Type,Accept,content-type,application/json',
+										'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,OPTIONS'
+									}
+								}
+								$http.post('https://fibologic-app.herokuapp.com/saveVisitor/', data, config)
+								.success(function (data, status, headers, config) {	
+									console.log("Post Data Submitted Successfully!");
+								})
+								.error(function (data, status, header, config) {
+									
+									console.log("Post Data Failed !");
+									console.log(data);
+									console.log(header);
+								});
+							}
+
+							$scope.resetContactQuery =  function () {
+								$scope.ContactQuery.name = '';
+								$scope.ContactQuery.emailId = '';
+								$scope.ContactQuery.mobile = '';
+								$scope.ContactQuery.message =  '';
 							};
 							$scope.displayEmailSuccessful = false;
 
@@ -252,6 +295,14 @@ angular
 								'title':'',
 								'desc':''
 								}		];
+
+							this.$onInit = function() {
+								console.log("controller inialized")
+								$http.get('https://fibologic-app.herokuapp.com/', {responseType: 'string'}).success(function(data){
+								$scope.backendConnectivity = data;
+								console.log(data);
+    							});
+							};
 
 							$scope.check = function() {
 								console.log('Chec method ccalled');

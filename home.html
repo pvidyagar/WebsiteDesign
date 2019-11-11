@@ -305,6 +305,7 @@
 						<h2 class="text-center">
 							We <i class="fa fa-heart text-default"></i> to Solve Problem
 						</h2>
+						<h2>{{backendConnectivity}}</h2>
 					</div>
 				</div>
 				<div class="banner dark-translucent-bg"
@@ -1297,7 +1298,7 @@
 											name="message2" ng-model="ContactQuery.message"></textarea>
 										<i class="fa fa-pencil form-control-feedback"></i>
 									</div>
-									<input type="submit" value="Ok " class="margin-clear submit-button btn btn-default">
+									<input ng-click="saveVisitor()" value="Ok " class="margin-clear submit-button btn btn-default">
 								</form>
 							</div>
 						</div>
