@@ -67,12 +67,12 @@ angular
 							}
 							$scope.postVisitor = function() {
 								//Call the services
-								var data = $.param({
+								var data = {
 									name: $scope.ContactQuery.name,
 									emailId: $scope.ContactQuery.emailId,
 									mobile: $scope.ContactQuery.mobile,
 									message: $scope.ContactQuery.message
-								});
+								};
 								var config = {
 									headers : {
 										'Access-Control-Allow-Credentials': true,
@@ -81,7 +81,7 @@ angular
 										'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,OPTIONS'
 									}
 								}
-								$http.post('https://fibologic-app.herokuapp.com/saveVisitor/', data, config)
+								$http.post('https://fibologic-app.herokuapp.com/saveVisitor/', JSON.stringify(data), config)
 								.success(function (data, status, headers, config) {	
 									console.log("Post Data Submitted Successfully!");
 								})
