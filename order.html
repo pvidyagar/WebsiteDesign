@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <title>Fibologic Technology Pvt. Ltd.</title>
+  <meta name="description" content="Fibologic Technology Pvt Ltd">
+  <meta name="author" content="Fibologic">
+
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="images/favicon.ico">
+
+  <!-- Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+  <!-- Font Awesome CSS -->
+  <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+
+  <!-- Plugins -->
+  <link href="plugins/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="css/animations.css" rel="stylesheet">
+  <link href="plugins/slick/slick.css" rel="stylesheet">
+
+  <!-- the project core CSS file -->
+  <link href="css/style.css" rel="stylesheet">
+
+  <!-- Color Scheme (In order to change the color scheme, replace the blue.css with the color scheme that you prefer)-->
+  <link href="css/skins/light_blue.css" rel="stylesheet">
+
+  <!-- Custom css -->
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="css/fibo-template.css" rel="stylesheet">
+
+</head>
+
+<!-- body classes:  -->
+<!-- "boxed": boxed layout mode e.g. <body class="boxed"> -->
+<!-- "pattern-1 ... pattern-9": background patterns for boxed layout mode e.g. <body class="boxed pattern-1"> -->
+<!-- "transparent-header": makes the header transparent and pulls the banner to top -->
+<!-- "gradient-background-header": applies gradient background to header -->
+<!-- "page-loader-1 ... page-loader-6": add a page loader to the page (more info @components-page-loaders.html) -->
+
+<body class="" ng-app="fiboApp" ng-controller="orderController">
+
+  <!-- scrollToTop -->
+  <!-- ================ -->
+  <div class="scrollToTop circle"><i class="fa fa-angle-up"></i></div>
+
+  <!-- page wrapper start -->
+  <!-- ================ -->
+  <div class="page-wrapper">
+    <!-- breadcrumb start -->
+    <!-- ================ -->
+    <div class="breadcrumb-container">
+      <div class="container">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home pr-2"></i><a class="link-dark" href="home.html">Home</a></li>
+          <li class="breadcrumb-item active">Your Order</li>
+        </ol>
+      </div>
+    </div>
+    <!-- breadcrumb end -->
+
+    <!-- main-container start -->
+    <!-- ================ -->
+    <section class="container">
+
+      <h2 class="text-center">
+        Build <i class="fa fa-heart text-default"></i>
+        <span class="text-default"> Your Order </span>
+      </h2>
+      <h4 class="text-dark text-center">"We are what we repeatedly
+        do. Excellence, is not an act, but a habit."</h4>
+      <div class="separator"></div>
+
+      <div ng-If="pageNumber == 1">
+        <h2 class="text-dark text-center">Select Frame</h2>
+        <div class="row">
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container">
+                <div class="cell4x2Outerbox" ng-click="setFrame('4x2')"
+                  ng-class="{'selectedFrameBackground': selectedFrame == '4x2'}">
+                  <div class="cell4x2 unit1"></div>
+                  <div class="cell4x2 unit2"></div>
+                  <div class="cell4x2 unit3"></div>
+                  <div class="cell4x2 unit4"></div>
+                  <div class="cell4x2 unit5"></div>
+                  <div class="cell4x2 unit6"></div>
+                  <div class="cell4x2 unit7"></div>
+                  <div class="cell4x2 unit8"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container text-center">
+                <div class=""></div>
+                <div class="cell4x1Outerbox" ng-click="setFrame('4x1')"
+                  ng-class="{'selectedFrameBackground': selectedFrame== '4x1'}">
+                  <div class="cell4x1 unit1"></div>
+                  <div class="cell4x1 unit2"></div>
+                  <div class="cell4x1 unit3"></div>
+                  <div class="cell4x1 unit4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container">
+                <div class="cell3x2Outerbox" ng-click="setFrame('3x2')"
+                  ng-class="{'selectedFrameBackground': selectedFrame== '3x2'}">
+                  <div class="cell3x2 unit1"></div>
+                  <div class="cell3x2 unit2"></div>
+                  <div class="cell3x2 unit3"></div>
+                  <div class="cell3x2 unit4"></div>
+                  <div class="cell3x2 unit5"></div>
+                  <div class="cell3x2 unit6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container">
+                <div class="cell3x1Outerbox" ng-click="setFrame('3x1')"
+                  ng-class="{'selectedFrameBackground': selectedFrame== '3x1'}">
+                  <div class="cell3x1 unit1"></div>
+                  <div class="cell3x1 unit2"></div>
+                  <div class="cell3x1 unit3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container">
+                <div class="cell2x2Outerbox" ng-click="setFrame('2x2')"
+                  ng-class="{'selectedFrameBackground': selectedFrame== '2x2'}">
+                  <div class="cell2x2 unit1"></div>
+                  <div class="cell2x2 unit2"></div>
+                  <div class="cell2x2 unit3"></div>
+                  <div class="cell2x2 unit4"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outerbox">
+            <div class="image-box style-2 mb-20 hc-shadow-2  text-center">
+              <div class="overlay-container">
+                <div class="cell2x1Outerbox" ng-click="setFrame('2x1')"
+                  ng-class="{'selectedFrameBackground': selectedFrame== '2x1'}">
+                  <div class="cell2x1 unit1"></div>
+                  <div class="cell2x1 unit2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-dark text-center">
+          <a ng-click="nextPage()"
+            class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
+            Next <i class="icon-right-big"></i>
+          </a>
+        </div>
+      </div>
+
+      <div ng-If="pageNumber == 2">
+        <h2 class="text-dark text-center">Select Units</h2>
+        <div class="cell4x1Outerbox-selected">
+          <div class="cell4x1 unit1-selected" ng-click="changeSlotUnit(slot1)" ng-class="getCellStyle(slot1)"></div>
+          <div class="cell4x1 unit2-selected" ng-click="changeSlotUnit(slot2)" ng-class="getCellStyle(slot2)"></div>
+          <div class="cell4x1 unit3-selected" ng-click="changeSlotUnit(slot3)" ng-class="getCellStyle(slot3)"></div>
+          <div class="cell4x1 unit4-selected" ng-click="changeSlotUnit(slot4)" ng-class="getCellStyle(slot4)"></div>
+        </div>
+        <div class="text-dark text-center">
+          <a ng-click="prevPage()"
+            class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
+            Previouse <i class="icon-right-big"></i>
+          </a>
+          <a ng-click="nextPage()"
+            class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
+            Next <i class="icon-right-big"></i>
+          </a>
+        </div>
+      </div>
+
+      <div ng-If="pageNumber == 3">
+        <h2 class="text-dark text-center">Select Theme</h2>
+        <div class="row">
+          <div class="col-md-9">
+            <div class="cell4x1Outerbox-selected" ng-style="getBoxThemeStyle()">
+              <div class="cell4x1 unit1-selected" ng-class="{ 'light-bg-image':slot1.assignedUnit.type == 'LIGHT', 
+                                  'fan-bg-image':slot1.assignedUnit.type == 'FAN',
+                                   'usb-bg-image':slot1 .assignedUnit.type == 'USB'
+                                  }"></div>
+              <div class="cell4x1 unit2-selected" ng-class="{
+                        'light-bg-image':slot2.assignedUnit.type == 'LIGHT', 
+                        'fan-bg-image':slot2.assignedUnit.type == 'FAN',
+                        'usb-bg-image':slot2.assignedUnit.type == 'USB',
+                      }"></div>
+              <div class="cell4x1 unit3-selected" ng-class="{
+                      'light-bg-image' : slot3.assignedUnit.type == 'LIGHT', 
+                      'fan-bg-image' : slot3.assignedUnit.type == 'FAN',
+                       'usb-bg-image' : slot3.assignedUnit.type == 'USB'
+                      }"></div>
+              <div class="cell4x1 unit4-selected" ng-class="getCellStyle(slot4)"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="col-md-12" ng-click="setTheme('FIBOSB1', '../FibologicWebsite/images/product/FIBOSB1.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB1.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB1</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12" ng-click="setTheme('FIBOSB4', '../FibologicWebsite/images/product/FIBOSB4.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB4.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB4</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12" ng-click="setTheme('FIBOSB6', '../FibologicWebsite/images/product/FIBOSB6.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB6.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB6</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3" ng-click="setTheme('FIBOSB7', '../FibologicWebsite/images/product/FIBOSB7.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB7.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB7</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" ng-click="setTheme('FIBOSB8', '../FibologicWebsite/images/product/FIBOSB8.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB8.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB8</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" ng-click="setTheme('FIBOSB9', '../FibologicWebsite/images/product/FIBOSB9.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB9.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB9</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" ng-click="setTheme('FIBOSB10', '../FibologicWebsite/images/product/FIBOSB10.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB10.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB10</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3" ng-click="setTheme('FIBOSB11', '../FibologicWebsite/images/product/FIBOSB11.jpg')">
+              <div class="image-box style-2 mb-20 hc-shadow-2 bordered light-gray-bg text-center">
+                <div class="overlay-container">
+                  <img src="images/product/FIBOSB11.jpg" alt="">
+                  <div class="overlay-to-top">
+                    <p class="small margin-clear">
+                      <em>Theme # FIBOSB11</em>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="text-dark text-center">
+            <a ng-click="prevPage()"
+              class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
+              Previous <i class="icon-right-big"></i>
+            </a>
+            <a ng-click="nextPage()"
+              class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
+              Next <i class="icon-right-big"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+
+  <!-- footer end -->
+
+  </div>
+  <!-- page-wrapper end -->
+
+  <!-- JavaScript files placed at the end of the document so the pages load faster -->
+  <!-- ================================================== -->
+  <!-- Jquery and Bootstap core js files -->
+  <script type="text/javascript" src="plugins/jquery.min.js"></script>
+  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Modernizr javascript -->
+  <script type="text/javascript" src="plugins/modernizr.js"></script>
+
+  <!-- jQuery Revolution Slider  -->
+  <script type="text/javascript" src="plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+  <script type="text/javascript" src="plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+  <!-- Isotope javascript -->
+  <script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+
+  <!-- Magnific Popup javascript -->
+  <script type="text/javascript" src="plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+  <!-- Appear javascript -->
+  <script type="text/javascript" src="plugins/waypoints/jquery.waypoints.min.js"></script>
+
+  <!-- Count To javascript -->
+  <script type="text/javascript" src="plugins/jquery.countTo.js"></script>
+
+  <!-- Parallax javascript -->
+  <script src="plugins/jquery.parallax-1.1.3.js"></script>
+
+  <!-- Contact form -->
+  <script src="plugins/jquery.validate.js"></script>
+
+  <!-- Background Video -->
+  <script src="plugins/vide/jquery.vide.js"></script>
+
+  <!-- Owl carousel javascript -->
+  <script type="text/javascript" src="plugins/owl-carousel/owl.carousel.js"></script>
+
+  <!-- SmoothScroll javascript -->
+  <script type="text/javascript" src="plugins/jquery.browser.js"></script>
+  <script type="text/javascript" src="plugins/SmoothScroll.js"></script>
+
+  <!-- Initialization of Plugins -->
+  <script type="text/javascript" src="js/template.js"></script>
+
+  <!-- Custom Scripts -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <script type="text/javascript" src="angular/angular.js"></script>
+  <script type="text/javascript" src="controllers/orderController.js"></script>
+
+
+
+</body>
+
+</html>

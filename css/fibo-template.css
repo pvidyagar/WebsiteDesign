@@ -1,0 +1,384 @@
+
+.cell4x1Outerbox {
+    align-self: center;
+    position: relative;
+    width: 340px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+
+.cell4x1.unit1 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x1.unit2 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x1.unit3 {
+    position: absolute;
+    top: 110px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x1.unit4 {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+  .cell4x1Outerbox-selected {
+    align-self: center;
+    position: relative;
+    width: 800px;
+    height: 450px;
+    border: 1px solid Black;  
+
+}
+  .cell4x1.unit1-selected {
+    position: absolute;
+    top: 220px;
+    left: 60px;
+    width: 125px;
+    height: 125px;
+
+  }
+  
+.cell4x1.unit2-selected {
+    position: absolute;
+    top: 220px;
+    left: 240px;
+    width: 125px;
+    height: 125px;
+
+
+  }
+  
+.cell4x1.unit3-selected {
+    position: absolute;
+    top: 220px;
+    left: 420px;
+    width: 125px;
+    height: 125px;
+
+
+  }
+  
+.cell4x1.unit4-selected {
+    position: absolute;
+    top: 220px;
+    left: 600px;
+    width: 125px;
+    height: 125px;
+
+
+  }
+
+.cell4x2Outerbox {
+    align-self: center;
+    position: relative;
+    width: 340px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+
+.cell4x2Outerbox-selected {
+    align-self: center;
+    position: relative;
+    width: 850px;
+    height: 450px;
+    border: 1px solid Black;  
+}
+  
+.cell4x2.unit1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit2 {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit3 {
+    position: absolute;
+    top: 40px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit4 {
+    position: absolute;
+    top: 40px;
+    left: 260px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell4x2.unit5 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit6 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit7 {
+    position: absolute;
+    top: 110px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell4x2.unit8 {
+    position: absolute;
+    top: 110px;
+    left: 260px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x1Outerbox {
+    position: relative;
+    width: 255px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+  
+.cell3x1.unit1 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x1.unit2 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x1.unit3 {
+    position: absolute;
+    top: 110px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell3x2Outerbox {
+    position: relative;
+    width: 255px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+  
+.cell3x2.unit1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x2.unit2 {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x2.unit3 {
+    position: absolute;
+    top: 40px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell3x2.unit4 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x2.unit5 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell3x2.unit6 {
+    position: absolute;
+    top: 110px;
+    left: 180px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell2x2Outerbox {
+    position: relative;
+    width: 180px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+  
+.cell2x2.unit1 {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell2x2.unit2 {
+    position: absolute;
+    top: 40px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+  
+.cell2x2.unit3 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell2x2.unit4 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell2x1Outerbox {
+    position: relative;
+    width: 180px;
+    height: 200px;
+    border: 1px solid Black;
+  } 
+  
+  
+.cell2x1.unit1 {
+    position: absolute;
+    top: 110px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+.cell2x1.unit2 {
+    position: absolute;
+    top: 110px;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    border: 1px solid Black;
+  }
+
+  .selectedFrameBackground {
+      background-color:  grey;
+  }
+
+  .outerbox {
+    display: inline-block;
+    padding: 30px;
+  }
+
+  .light-bg-image {
+    background-image : url("../images/order/units/light.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+  }
+
+  .fan-bg-image {
+    background-image : url("../images/order/units/fan.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+  }
+
+  .usb-bg-image {
+    background-image : url("../images/order/units/usb.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+  }
+
+  .switch-bg-image {
+    background-image : url("../images/order/units/switch.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    background-position: center;
+  }
