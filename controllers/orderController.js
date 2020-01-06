@@ -140,9 +140,8 @@ angular
 								} 
 							}
 
-							$scope.selectedThemeUrl = '../FibologicWebsite/images/product/FIBOSB1.jpg';
+							$scope.selectedThemeUrl = '../FibologicWebsite/images/order/units/default.png';
 							$scope.setTheme = function (themeId, themeUrl) {
-								console.log('setTheme = themeId=' + themeId  + " themeUrl = " + themeUrl );
 								$scope.selectedThemeUrl = themeUrl;
 								$scope.selectedThemeId = themeId;
 							}
@@ -163,7 +162,7 @@ angular
 								'fan-bg-image' : slot.assignedUnit.type == 'FAN',
 								 'usb-bg-image' : slot.assignedUnit.type == 'USB'
 								};
-							}
+								}
 							this.$onInit = function() {
 								$http.get('https://fibologic-app.herokuapp.com/', {responseType: 'string'}).success(function(data){
 								$scope.backendConnectivity = data;

@@ -181,6 +181,7 @@
       <div ng-If="pageNumber == 2">
         <h2 class="text-dark text-center">Select Units</h2>
         <div class="cell4x1Outerbox-selected">
+          <div class="cell4x1 instruction"> Click on the Unit Image to Change</div>
           <div class="cell4x1 unit1-selected" ng-click="changeSlotUnit(slot1)" ng-class="getCellStyle(slot1)"></div>
           <div class="cell4x1 unit2-selected" ng-click="changeSlotUnit(slot2)" ng-class="getCellStyle(slot2)"></div>
           <div class="cell4x1 unit3-selected" ng-click="changeSlotUnit(slot3)" ng-class="getCellStyle(slot3)"></div>
@@ -189,7 +190,7 @@
         <div class="text-dark text-center">
           <a ng-click="prevPage()"
             class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
-            Previouse <i class="icon-right-big"></i>
+            Previous <i class="icon-right-big"></i>
           </a>
           <a ng-click="nextPage()"
             class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
@@ -200,6 +201,8 @@
 
       <div ng-If="pageNumber == 3">
         <h2 class="text-dark text-center">Select Theme</h2>
+
+        <div> Click on any Theme to Apply</div>
         <div class="row">
           <div class="col-md-9">
             <div class="cell4x1Outerbox-selected" ng-style="getBoxThemeStyle()">
@@ -322,6 +325,7 @@
             </div>
           </div>
         </div>
+        
         <div class="row">
           <div class="text-dark text-center">
             <a ng-click="prevPage()"
@@ -330,7 +334,7 @@
             </a>
             <a ng-click="nextPage()"
               class="btn btn-default-transparent btn-default-transparent-black btn-md btn-animated smooth-scroll">
-              Next <i class="icon-right-big"></i>
+              Submit <i class="icon-right-big"></i>
             </a>
           </div>
         </div>
