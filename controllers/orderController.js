@@ -140,7 +140,7 @@ angular
 								} 
 							}
 
-							$scope.selectedThemeUrl = '../FibologicWebsite/images/order/units/default.png';
+							$scope.selectedThemeUrl = '../images/order/units/default.png';
 							$scope.setTheme = function (themeId, themeUrl) {
 								$scope.selectedThemeUrl = themeUrl;
 								$scope.selectedThemeId = themeId;
